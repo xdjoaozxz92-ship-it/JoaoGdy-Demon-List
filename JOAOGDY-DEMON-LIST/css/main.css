@@ -1,0 +1,259 @@
+:root {
+    --color-background: white;
+    --color-on-background: black;
+    --color-background-hover: #eee;
+    --color-on-background-hover: black;
+    --color-primary: #0066ff;
+    --color-on-primary: white;
+    --color-error: #de0000;
+    --color-on-error: white;
+}
+
+main.dark,
+header.dark {
+    color-scheme: dark;
+    --color-background: #1c1b1f;
+    --color-on-background: white;
+    --color-background-hover: #27262c;
+    --color-on-background-hover: white;
+    --color-primary: #283593;
+    --color-primary-disabled: #1f213c;
+    --color-on-primary: white;
+    --color-error: #de0000;
+    --color-on-error: white;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+header,
+main {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    display: grid;
+    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
+            16em,
+            1fr
+        );
+    column-gap: 2rem;
+}
+
+header {
+    display: flex;
+    padding-inline: calc(25vw - 10rem);
+    height: 4rem;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+@media screen and (min-width: 1366px) {
+    header {
+        display: grid;
+        padding-inline: 0;
+    }
+}
+header .logo {
+    justify-self: end;
+    align-self: center;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+}
+header .nav {
+    flex: 1;
+}
+
+main {
+    height: 0;
+    flex: 1;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    column-gap: 2rem;
+}
+main > div {
+    overflow-y: auto;
+}
+
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 3;
+}
+
+input[type="checkbox"] {
+    height: 1.25rem;
+    width: 1.25rem;
+    cursor: pointer;
+    margin: 0;
+}
+
+
+/* JOAOGDY DEMON LIST - identidade azul neon */
+:root {
+    --color-background: #080d1b;
+    --color-on-background: #f4f7ff;
+    --color-background-hover: #111d38;
+    --color-on-background-hover: #ffffff;
+    --color-primary: #075bff;
+    --color-on-primary: #ffffff;
+}
+main.dark,
+header.dark {
+    --color-background: #080d1b;
+    --color-on-background: #f4f7ff;
+    --color-background-hover: #111d38;
+    --color-on-background-hover: #ffffff;
+    --color-primary: #075bff;
+    --color-primary-disabled: #18366f;
+    --color-on-primary: #ffffff;
+}
+header {
+    background: linear-gradient(100deg, #06112b, #075bff 58%, #073a9e);
+    border-bottom: 1px solid #2580ff;
+    box-shadow: 0 4px 24px #0066ff30;
+}
+header .logo h2 { letter-spacing: -1px; }
+header .logo p { color: #c8dcff; }
+.page-list .list .level.active button {
+    box-shadow: 0 0 18px #075bff55;
+}
+.page-list .level-container .level .records .record {
+    border-bottom: 1px solid #26385c;
+}
+a { color: #63a5ff; }
+a:hover { color: #a8ceff; }
+@media (max-width: 900px) {
+    header { height: auto; min-height: 4rem; padding: 0.75rem 1rem; flex-wrap: wrap; gap: 0.75rem; }
+    header .logo { justify-self: start; }
+    header .nav { min-width: 100%; }
+    header .nav .nav__actions { gap: 0.5rem; }
+    main { grid-template-columns: minmax(0, 1fr); height: auto; }
+    main > div { overflow: visible; }
+    .page-list .list-container, .page-list .level-container, .page-list .meta-container { padding: 1rem; }
+    .page-list .level-container .level { padding-right: 0; }
+}
+
+/* Correção de layout desktop: cabeçalho alinhado e logo sem quebra */
+*, *::before, *::after { box-sizing: border-box; }
+
+header {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(1rem, 3vw, 3rem);
+    width: 100%;
+    height: 4rem;
+    min-height: 4rem;
+    padding: 0 2rem !important;
+    overflow: hidden;
+}
+
+header .logo {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: baseline;
+    gap: 0.75rem;
+    justify-self: auto;
+    min-width: max-content;
+    white-space: nowrap;
+}
+
+header .logo h2 {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+}
+
+header .logo p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+header .nav {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
+    height: 100%;
+    column-gap: clamp(0.5rem, 2vw, 2rem);
+}
+
+header .nav .nav__tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+header .nav .nav__actions {
+    flex: 1 1 auto;
+    min-width: max-content;
+    gap: 0.5rem;
+}
+
+header .nav .nav__actions .nav__cta {
+    white-space: nowrap;
+}
+
+main {
+    min-width: 0;
+    grid-template-columns: minmax(230px, 1fr) minmax(480px, 2fr) minmax(280px, 1fr);
+    column-gap: clamp(1rem, 2vw, 2rem);
+}
+
+main > div {
+    min-width: 0;
+}
+
+.page-list .level-container .level {
+    width: 100%;
+    max-width: none;
+}
+
+.page-list .level-container .level .video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+}
+
+@media (max-width: 1100px) {
+    header { padding: 0 1rem !important; gap: 1rem; }
+    header .logo h2 { font-size: 1.15rem; }
+    header .nav { column-gap: 0.5rem; }
+    header .nav .nav__tab { padding-inline: 0.35rem; }
+    main { grid-template-columns: minmax(190px, 0.85fr) minmax(390px, 2fr) minmax(240px, 1fr); }
+}
+
+@media (max-width: 820px) {
+    header {
+        height: auto;
+        min-height: 4rem;
+        padding: 0.75rem 1rem !important;
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+    header .logo { width: 100%; }
+    header .nav { width: 100%; min-width: 0; flex-wrap: wrap; }
+    header .nav .nav__actions { flex: 1 1 100%; justify-content: flex-start; }
+    main {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        flex: 1 0 auto;
+        gap: 0;
+    }
+    main > div { overflow: visible; }
+    .page-list .level-container .level { padding: 0 1rem; }
+}
